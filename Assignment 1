@@ -1,0 +1,172 @@
+# Python 1026 Assignment 1
+# Author: Edward Cheng
+# Student Number: 251024979
+# This program prompts the user for various
+# pieces of information about the desired breakfast
+
+
+
+user = ""
+cost = 0
+done = False
+
+# Initiate Constants
+
+egg = 0.99
+bacon = 0.49
+sausage = 1.49
+hash_brown = 1.19
+toast = 0.79
+coffee = 1.09
+tea = 0.89
+small_breakfast = egg + hash_brown + (bacon*2) + (toast*2) + sausage
+regular_breakfast = (egg*2) + hash_brown + (toast*2) + (bacon*4) + (sausage*2)
+big_breakfast = (egg*3) + (hash_brown*2) + (toast*4) + (bacon*6) + (sausage*3)
+
+
+# This is to ensure that the keywords are not case sensitive
+
+
+def formatInput(textLine):
+ textLine = textLine.lower().strip()
+ wordList = textLine.split()
+ textLine = " ".join(wordList)
+ return textLine
+
+# user = input('Enter item (q to terminate): small breakfast, regular breakfast, big breakfast, egg, bacon, sausage, hash brown, toast, coffee, tea: ')
+
+while done == False:
+    
+    user = input('Enter item (q to terminate): small breakfast, regular breakfast, big breakfast, egg, bacon, sausage, hash brown, toast, coffee, tea: ')
+
+    if formatInput(user) == "q":
+        done = True
+        
+    elif formatInput(user) == "egg":
+        user_1 = input('Enter quantity: ')
+        if user_1.isnumeric():
+            cost += egg * int(user_1)
+        else:
+            print()
+            print("not numeric")
+            print()
+
+    elif formatInput(user) == "bacon":
+        user_1 = (input('Enter quantity: '))
+        if user_1.isnumeric():
+            cost += bacon * int(user_1)
+        else:
+            print()
+            print("not numeric")
+            print()
+
+    elif formatInput(user) == "sausage":
+        user_1 = (input('Enter quantity: '))
+        if user_1.isnumeric():
+            cost += sausage * int(user_1)
+        else:
+            print()
+            print("not numeric")
+            print()
+
+    elif formatInput(user) == "hash brown":
+        user_1 =(input('Enter quantity: '))
+        if user_1.isnumeric():
+            cost += hash_brown * int(user_1)
+        else:
+            print()
+            print("not numeric")
+            print()
+
+    elif formatInput(user) == "toast":
+        user_1 =(input('Enter quantity: '))
+        if user_1.isnumeric():
+            cost += toast * int(user_1)
+        else:
+            print()
+            print("not numeric")
+            print()
+
+    elif formatInput(user) == "coffee":
+        user_1 =(input('Enter quantity: '))
+        if user_1.isnumeric():
+            cost += coffee * int(user_1)
+        else:
+            print()
+            print("not numeric")
+            print()
+
+    elif formatInput(user) == "tea":
+        user_1 =(input('Enter quantity: '))
+        if user_1.isnumeric():
+            cost += tea * int(user_1)
+        else:
+            print()
+            print("not numeric")
+            print()
+
+    elif formatInput(user) == "small breakfast":
+        user_1 =(input('Enter quantity: '))
+        if user_1.isnumeric():
+            cost += small_breakfast * int(user_1)
+        else:
+            print()
+            print("not numeric")
+            print()
+
+    elif formatInput(user) == "regular breakfast":
+        user_1 =(input('Enter quantity: '))
+        if user_1.isnumeric():
+            cost += regular_breakfast * int(user_1)
+        else:
+            print()
+            print("not numeric")
+            print()
+
+    elif formatInput(user) == "big breakfast":
+        user_1 =(input('Enter quantity: '))
+        if user_1.isnumeric():
+            cost += big_breakfast * int(user_1)
+        else:
+            print()
+            print("not numeric")
+            print()
+
+    else:
+        print()
+        print("ERROR! No keywords identified")
+        print()
+
+
+
+# Calculate Cost, Tax, and Total
+
+cost = float(cost)
+cost = round(cost, 2)
+
+print
+tax = cost * 0.13
+tax = float(tax)
+tax = round(tax, 2)
+
+
+total = cost + tax
+total = float(total)
+total = round(total, 2)
+
+
+# Print Cost, Tax, and Total
+
+print()
+print("Cost: $",float(cost))
+print("Tax: $",float(tax))
+print("Total: $",float(total))
+
+
+
+
+
+
+
+
+
